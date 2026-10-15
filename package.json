@@ -1,0 +1,12 @@
+{
+  "name": "spaceapps-social",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Generador de badges de la comunidad Space Apps",
+  "scripts": {
+    "dev": "node scripts/serve.mjs",
+    "build": "node scripts/build.mjs",
+    "check": "node --check app.js && node --check config.js"
+  },
+  "engines": { "node": ">=20" }
+}
