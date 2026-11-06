@@ -1,58 +1,67 @@
-# Space Apps · Community badges
+# NASA Space Apps San Salvador
 
-Sitio responsive en español con generador de imágenes para redes, inspirado en el flujo de https://devday.ailabs.sv/ y la identidad visual de https://www.spaceappschallenge.org/.
+Event site and social badge generator for the NASA Space Apps Challenge local event in San Salvador. Visitors learn what Space Apps is, how to take part, and create a personalized badge (post or story) to share on social media.
 
-## Ejecutar
+The site content is in Spanish. It is a static site with no runtime dependencies.
 
-Requiere Node.js 20 o superior. No hay dependencias que instalar.
+## Getting started
 
-```sh
-npm run dev
-```
-
-Abrir http://127.0.0.1:4173.
+Requires Node.js 20 or later.
 
 ```sh
-npm run check
-npm run build
+npm run dev      # http://127.0.0.1:4173
+npm run check    # syntax check for browser scripts
+npm run build    # outputs the static site to dist/
+npm run format   # formats the codebase with Prettier
 ```
 
-El build produce `dist/`, publicable en cualquier hosting estático. No requiere servidor de aplicación, base de datos, claves ni variables de entorno.
+## Project structure
 
-## Funcionalidad
-
-- Nombre, rol/equipo y ciudad, con vista previa inmediata.
-- Foto JPG, PNG o WebP de hasta 8 MB (máximo 40 megapíxeles), zoom y encuadre vertical.
-- Avatar ilustrado cuando no se carga foto.
-- Tres paletas: Azul misión, Espacio y Supernova.
-- PNG de 1080 × 1080 para post y 1080 × 1920 para story.
-- Las fotos se procesan en memoria en el navegador; no se suben ni se guardan.
-- Validación de nombre, imagen y errores de exportación.
-
-## Personalizar el evento
-
-Editar `config.js`: `city` precompleta la ciudad y `edition` aparece en el badge. Se dejan vacíos hasta confirmar la sede y edición. Los textos y el enlace al sitio oficial están en `index.html`; el diseño exportado está en `app.js` y los estilos del sitio en `styles.css`.
-
-El sitio no registra asistentes ni publica una galería. La creación del badge no constituye inscripción al evento.
-
-## Desplegar desde Git
-
-Este directorio es un repositorio Git local. Crear un repositorio vacío en GitHub y luego ejecutar, reemplazando la URL por la real:
-
-```sh
-git remote add origin https://github.com/TU-ORGANIZACION/spaceapps-social.git
-git push -u origin main
+```
+index.html                  Page markup and copy
+src/
+  css/main.css              Styles, brand tokens and motion
+  js/event-config.js        Event details (city, dates, mode, countdown target)
+  js/space-scene.js         Background canvas: starfield and orbit tunnel
+  js/page-motion.js         Scroll reveals, counters, timeline, countdown, preview tilt
+  js/badge-generator.js     Badge rendering and PNG export
+assets/
+  brand/                    Official Space Apps logos
+  fonts/                    Fira Sans, Overpass and Fira Code (SIL OFL)
+  partners/                 Sponsor logos used in the badge "Powered by" row
+  favicon.svg
+scripts/
+  build.mjs                 Static build
+  dev-server.mjs            Local development server
 ```
 
-- **Vercel:** importar el repositorio. `vercel.json` configura build y directorio de salida.
-- **Netlify:** importar el repositorio. `netlify.toml` contiene la configuración.
-- **Cloudflare Pages:** conectar el repositorio, usar `npm run build` y `dist` como directorio de salida.
-- **Hosting estático:** subir únicamente el contenido de `dist/`.
+## Configuration
 
-No se creó un repositorio remoto ni se publicó el sitio en esta entrega.
+Edit `src/js/event-config.js`:
 
-## Marca y recursos
+- `city`, `dates` and `mode` appear on the site and on the badge.
+- `eventStart` drives the countdown. Leave it empty to hide it.
 
-El logo local proviene del sitio oficial: https://assets.spaceappschallenge.org/media/images/Space_Apps_Logo_Color_and_White.width-440.jpegquality-60.png
+## Features
 
-La marca y el logo pertenecen a sus titulares. Este proyecto se presenta como generador de la comunidad. No afirma ser una plataforma oficial de NASA. Las ilustraciones orbitales y el avatar son gráficos propios realizados con CSS y Canvas. No hay fuentes ni librerías externas que deban cargarse para exportar una imagen.
+- Live badge preview with name, role or team, and photo (JPG, PNG or WebP up to 8 MB, 40 MP max) with zoom and vertical framing.
+- 1080 × 1080 post and 1080 × 1920 story PNG exports.
+- Photos are processed in the browser and never uploaded.
+- Immersive background with a 3D orbit tunnel that accelerates on scroll.
+- All non-essential motion is disabled with `prefers-reduced-motion`.
+
+## Brand
+
+Follows the NASA Space Apps Brand Guide 2026: official logos, color palette, Fira Sans / Overpass / Fira Code typography, Neon Yellow used only as an accent, alternating subheading lines, circular photo holders with concentric orbits, and the coordinates pattern at 25% opacity.
+
+The badge "Powered by" row includes Ai Labs, Cognition, IEEE and SVNet. Logos are normalized by visual weight at render time.
+
+Brands and logos belong to their respective owners. This is a community project and not an official NASA site. Creating a badge does not register you for the event.
+
+## Deployment
+
+The build output in `dist/` can be hosted on any static host.
+
+- **Vercel:** import the repository; `vercel.json` sets the build command and output directory.
+- **Netlify:** import the repository; `netlify.toml` contains the configuration.
+- **Cloudflare Pages:** use `npm run build` and `dist` as the output directory.
