@@ -1,29 +1,269 @@
 <!doctype html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Tu próxima misión · Space Apps</title>
-  <meta name="description" content="Creá tu badge de la comunidad Space Apps. Personalizá tu foto y descargá un post o story para compartir.">
-  <meta name="theme-color" content="#22277b">
-  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="styles.css">
-  <script src="config.js" defer></script><script src="app.js" defer></script>
-</head>
-<body>
-  <header class="header"><a class="brand" href="#" aria-label="Inicio"><img src="assets/spaceapps-logo.png" alt="NASA Space Apps Challenge" width="220" height="92"></a><nav aria-label="Principal"><a href="#como">Cómo funciona</a><a href="https://www.spaceappschallenge.org/" target="_blank" rel="noopener noreferrer">Conocé Space Apps ↗</a></nav><a class="nav-cta" href="#crear">Crear mi badge <span>↗</span></a></header>
-  <main>
-    <section class="hero">
-      <div class="hero-copy"><p class="eyebrow"><span class="status-dot"></span> UNA COMUNIDAD. INFINITAS POSIBILIDADES.</p><h1>El próximo<br>gran salto<br>lleva <em>tu nombre.</em></h1><p class="intro">Las grandes ideas empiezan con personas como vos.<br>Creá tu badge de Space Apps y compartí tu próxima misión.</p><a class="button primary" href="#crear">Crear mi badge <span>↗</span></a><p class="hero-note">Tu foto. Tu nombre. Tu lugar en la misión.</p></div>
-      <div class="mission-art" aria-hidden="true"><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><span class="star star-one">✦</span><span class="star star-two">✦</span><div class="planet"><div class="planet-lines"></div></div><div class="art-label">CREATIVIDAD SIN LÍMITES<br><strong>EARTH → SPACE → YOU</strong></div><div class="mission-sticker">HAY ESPACIO<br>PARA <b>VOS.</b><span>↗</span></div><span class="coordinates">01 / EXPLORAR &nbsp; 02 / CREAR &nbsp; 03 / COMPARTIR</span></div>
-    </section>
-    <div class="ticker" aria-hidden="true"><span>CIENCIA</span>✦<span>CÓDIGO</span>✦<span>DISEÑO</span>✦<span>IMAGINACIÓN</span>✦<span>COMUNIDAD</span>✦<span>VOS</span>↗</div>
-    <section class="generator section" id="crear"><div class="section-heading"><div><p class="eyebrow">TU MISIÓN EMPIEZA ACÁ / 01</p><h2>Hacelo tuyo.<br><span>Compartilo con el mundo.</span></h2></div><p>Un badge tan único como tu próxima idea.<br>Personalizalo y llevátelo a tus redes.</p></div>
-      <div class="studio"><form id="badge-form" novalidate><div class="step-title"><span>01</span><h3>Presentate a la tripulación</h3></div><label for="name">Tu nombre <span>Obligatorio</span></label><input id="name" maxlength="48" placeholder="¿Cómo te llamás?" autocomplete="name" required><label for="role">Rol o equipo <span>Opcional</span></label><input id="role" maxlength="60" placeholder="Ej. Diseñadora · Equipo Órbita"><label for="location">Tu ciudad <span>Opcional</span></label><input id="location" maxlength="45" placeholder="Ej. San Salvador, El Salvador" autocomplete="address-level2">
-      <div class="step-title"><span>02</span><h3>Sumá tu foto</h3></div><label class="upload" for="photo"><span class="upload-icon">↑</span><strong id="upload-label">Elegí una foto</strong><span>JPG, PNG o WebP · Hasta 8 MB</span><input id="photo" type="file" accept="image/jpeg,image/png,image/webp"></label><div id="photo-controls" hidden><label for="zoom">Acercar foto</label><input id="zoom" type="range" min="1" max="2.5" step="0.01" value="1"><label for="position">Posición vertical</label><input id="position" type="range" min="0" max="100" value="50"><button type="button" class="text-button" id="remove-photo">Quitar foto</button></div><p class="privacy">⌑ Tu foto se queda en tu dispositivo.</p>
-      <div class="step-title"><span>03</span><h3>Elegí tu órbita</h3></div><div class="themes" role="group" aria-label="Color del badge"><button type="button" data-theme="blue" aria-pressed="true"><i class="swatch blue"></i>Azul misión</button><button type="button" data-theme="dark" aria-pressed="false"><i class="swatch dark"></i>Espacio</button><button type="button" data-theme="orange" aria-pressed="false"><i class="swatch orange"></i>Supernova</button></div></form>
-      <div class="preview-panel"><div class="preview-toolbar"><span><i class="status-dot"></i> VISTA PREVIA</span><div role="group" aria-label="Formato"><button type="button" data-format="post" aria-pressed="true">Post 1:1</button><button type="button" data-format="story" aria-pressed="false">Story 9:16</button></div></div><div class="canvas-stage"><canvas id="badge" width="1080" height="1080" role="img" aria-label="Vista previa de tu badge personalizado"></canvas></div><div class="export-meta"><span id="dimensions">1080 × 1080 px</span><span>PNG · Alta resolución</span></div><button class="button primary download" id="download" type="button">Descargar mi badge <span>↓</span></button><p class="download-note">Listo para Instagram, LinkedIn o donde esté tu comunidad.</p><p id="message" role="status" aria-live="polite"></p></div></div>
-    </section>
-    <section id="como" class="how section"><p class="eyebrow">DE TU IDEA A TU FEED / 02</p><h2>Tres pasos. Un gran despegue.</h2><div class="how-grid"><article><span>01 / PERSONALIZÁ</span><h3>Esta misión tiene tu cara.</h3><p>Agregá tu nombre, tu foto y lo que te gusta hacer. Todas las disciplinas tienen lugar.</p></article><article><span>02 / DESCARGÁ</span><h3>Elegí dónde despegar.</h3><p>Un post cuadrado o una story vertical. Tu imagen se descarga lista para publicar.</p></article><article><span>03 / COMPARTÍ</span><h3>Encontrá a tu tripulación.</h3><p>Publicá tu badge con <strong>#SpaceApps</strong> e invitá a más personas a crear con vos.</p></article></div></section>
-    <section class="closing"><span>✦</span><h2>Las ideas no tienen fronteras.<br>Tu imaginación tampoco.</h2><a href="https://www.spaceappschallenge.org/" target="_blank" rel="noopener noreferrer">Explorá NASA Space Apps Challenge ↗</a></section>
-  </main><footer><img src="assets/spaceapps-logo.png" alt="NASA Space Apps Challenge" width="166"><p>Generador de badges de la comunidad.<br>Crear un badge no confirma tu registro al evento.</p><a href="#crear">Volver a crear ↑</a></footer>
-</body></html>
+<html lang="es" class="no-js">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Badge · NASA Space Apps San Salvador</title>
+    <meta
+      name="description"
+      content="Hacé tu badge de NASA Space Apps San Salvador con tu foto y descargalo como post o story."
+    />
+    <meta name="theme-color" content="#07173F" />
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="preload" href="assets/fonts/fira-sans-900.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="assets/fonts/overpass.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="src/css/main.css" />
+    <script src="src/js/event-config.js" defer></script>
+    <script src="src/js/space-scene.js" defer></script>
+    <script src="src/js/page-motion.js" defer></script>
+    <script src="src/js/badge-generator.js" defer></script>
+  </head>
+  <body>
+    <canvas id="space" aria-hidden="true"></canvas>
+    <header class="header" id="header">
+      <a class="lockup" href="#" aria-label="NASA Space Apps San Salvador, inicio"
+        ><img src="assets/brand/space-apps-logo-white.svg" alt="" width="561" height="221" /><span class="local"
+          ><i></i>SAN SALVADOR</span
+        ></a
+      >
+      <p class="tags"><span>#SpaceApps</span><span>#SpaceAppsSanSalvador</span></p>
+    </header>
+    <main>
+      <section class="hero">
+        <div class="hero-copy">
+          <ul class="chips" data-reveal>
+            <li>
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <rect x="3.5" y="5" width="17" height="15.5" rx="1.5" />
+                <path d="M3.5 9.5h17M8 3v4M16 3v4" /></svg
+              ><span id="chip-date">14–15 Nov</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <circle cx="12" cy="12" r="8.5" />
+                <path
+                  d="M3.5 12h17M12 3.5c-2.6 2.4-3.8 5.2-3.8 8.5s1.2 6.1 3.8 8.5c2.6-2.4 3.8-5.2 3.8-8.5S14.6 5.9 12 3.5z"
+                /></svg
+              ><span id="chip-mode">Híbrido</span>
+            </li>
+          </ul>
+          <h1 data-reveal style="--d: 0.08s">NASA Space Apps<span>San Salvador</span></h1>
+          <p class="stripes" data-reveal style="--d: 0.16s">
+            <span>Hacé tu badge,</span><span>compartilo y contale a todos</span><span>que vas a participar.</span>
+          </p>
+          <div class="actions" data-reveal style="--d: 0.24s">
+            <a class="button" href="#crear">Crear mi badge</a><a class="link" href="#que-es">¿Qué es Space Apps?</a>
+          </div>
+          <p class="countdown" id="countdown" data-reveal style="--d: 0.32s" hidden>
+            <span class="countdown-label">Faltan</span><span><b data-unit="d">00</b>días</span
+            ><span><b data-unit="h">00</b>horas</span><span><b data-unit="m">00</b>min</span
+            ><span><b data-unit="s">00</b>seg</span>
+          </p>
+        </div>
+      </section>
+
+      <section class="about" id="que-es">
+        <div class="about-intro" data-reveal>
+          <h2>¿Qué es NASA Space Apps?</h2>
+          <p class="lead">
+            Es el hackathon global más grande del año. Durante dos días, equipos de todo el mundo usan datos abiertos de
+            NASA y de sus agencias espaciales aliadas para resolver desafíos reales, en la Tierra y en el espacio.
+          </p>
+          <p>
+            Los desafíos los escriben especialistas de NASA y abarcan temas como narrativa, desarrollo de software,
+            astrofísica, exploración espacial y agricultura.
+          </p>
+        </div>
+        <div class="telemetry-wrap" data-reveal>
+          <dl class="telemetry">
+            <div>
+              <dt>Registros</dt>
+              <dd data-count="487" data-suffix="k+">487k+</dd>
+            </div>
+            <div>
+              <dt>Eventos locales</dt>
+              <dd data-count="3400" data-suffix="+">3,400+</dd>
+            </div>
+            <div>
+              <dt>Países y territorios</dt>
+              <dd data-count="190" data-suffix="+">190+</dd>
+            </div>
+            <div>
+              <dt>Agencias espaciales aliadas</dt>
+              <dd data-count="17">17</dd>
+            </div>
+          </dl>
+          <p class="source">Cifras acumuladas desde 2012, según spaceappschallenge.org.</p>
+        </div>
+        <div class="perks">
+          <h3 class="perks-title" data-reveal>No necesitás ser experto,<span>solo curiosidad.</span></h3>
+          <ul>
+            <li data-reveal>
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <circle cx="9" cy="8.5" r="3.5" />
+                <path d="M2.5 19.5c.8-3.4 3.4-5.5 6.5-5.5s5.7 2.1 6.5 5.5" />
+                <circle cx="17" cy="8" r="2.6" />
+                <path d="M17 13.2c2.4.2 4 1.8 4.5 4.3" />
+              </svg>
+              <h4>Abierto a todos</h4>
+              <p>Programadores, diseñadores, comunicadores, científicos y cualquier persona con ganas de crear.</p>
+            </li>
+            <li data-reveal style="--d: 0.08s">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M4 5.5h16v10H9.5L5 19v-3.5H4z" />
+                <path d="M8 9.5h8M8 12h5" />
+              </svg>
+              <h4>Mentoría local</h4>
+              <p>Acompañamiento de especialistas durante todo el reto.</p>
+            </li>
+            <li data-reveal style="--d: 0.16s">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <rect x="3.5" y="4" width="17" height="12" rx="1.5" />
+                <path d="M7.5 8h9M7.5 11h5" />
+                <circle cx="16" cy="16.5" r="2.5" />
+                <path d="m14.6 18.6-.8 2.9 2.2-1 2.2 1-.8-2.9" />
+              </svg>
+              <h4>Certificado digital</h4>
+              <p>Emitido por NASA Space Apps para todas las personas que participan.</p>
+            </li>
+            <li data-reveal style="--d: 0.24s">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <circle cx="12" cy="12" r="8.5" />
+                <path
+                  d="M3.5 12h17M12 3.5c-2.6 2.4-3.8 5.2-3.8 8.5s1.2 6.1 3.8 8.5c2.6-2.4 3.8-5.2 3.8-8.5S14.6 5.9 12 3.5z"
+                />
+              </svg>
+              <h4>Global Nominees</h4>
+              <p>Los mejores proyectos de San Salvador compiten a nivel global.</p>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="participate" id="participar">
+        <h2 data-reveal>Cómo participar</h2>
+        <ol class="steps" id="steps">
+          <li data-reveal>
+            <span class="node">1</span>
+            <p class="when">26 Ago – Nov</p>
+            <h3>Registrate</h3>
+            <p>Creá tu cuenta en spaceappschallenge.org y elegí San Salvador como tu evento local.</p>
+          </li>
+          <li data-reveal style="--d: 0.08s">
+            <span class="node">2</span>
+            <p class="when">17 Sep – Nov</p>
+            <h3>Formá tu equipo</h3>
+            <p>De 1 a 6 personas. Podés llegar con tu grupo o formarlo el mismo día del evento.</p>
+          </li>
+          <li data-reveal style="--d: 0.16s">
+            <span class="node">3</span>
+            <p class="when">17 Sep – Nov</p>
+            <h3>Elegí tu reto</h3>
+            <p>Explorá el catálogo oficial de desafíos y elegí el que más te inspire.</p>
+          </li>
+          <li data-reveal style="--d: 0.24s">
+            <span class="node">4</span>
+            <p class="when">14–15 Nov</p>
+            <h3>Participá en el hackathon</h3>
+            <p>Diseñá y construí tu proyecto usando datos abiertos del espacio.</p>
+          </li>
+        </ol>
+      </section>
+
+      <section class="generator" id="crear">
+        <div class="gen-head" data-reveal>
+          <h2>Creá tu badge</h2>
+          <p class="stripes small"><span>Tu foto y tu nombre,</span><span>listos para post o story.</span></p>
+        </div>
+        <div class="studio">
+          <form id="badge-form" class="panel" novalidate data-reveal>
+            <fieldset>
+              <legend>Tus datos</legend>
+              <label for="name">Nombre <span>Obligatorio</span></label
+              ><input id="name" maxlength="40" placeholder="Nombre y apellido" autocomplete="name" required />
+              <label for="role">Rol o equipo <span>Opcional</span></label
+              ><input id="role" maxlength="50" placeholder="Ej. Diseño, Equipo Órbita" />
+            </fieldset>
+            <fieldset>
+              <legend>Foto</legend>
+              <label class="upload" for="photo" id="upload"
+                ><svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M12 15.5V4M7.5 8.5 12 4l4.5 4.5M4 14.5v4.5a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-4.5" /></svg
+                ><strong id="upload-label">Elegí o arrastrá una foto</strong><span>JPG, PNG o WebP, hasta 8 MB</span
+                ><input id="photo" type="file" accept="image/jpeg,image/png,image/webp"
+              /></label>
+              <div id="photo-controls" hidden>
+                <label for="zoom">Zoom</label
+                ><input id="zoom" type="range" min="1" max="2.5" step="0.01" value="1" /><label for="position"
+                  >Posición vertical</label
+                ><input id="position" type="range" min="0" max="100" value="50" /><button
+                  type="button"
+                  class="text-button"
+                  id="remove-photo"
+                >
+                  Quitar foto
+                </button>
+              </div>
+              <p class="privacy">La foto no sale de tu dispositivo.</p>
+            </fieldset>
+          </form>
+          <div class="panel stage" id="stage" data-reveal style="--d: 0.1s">
+            <div class="stage-orbits" aria-hidden="true"><i></i><i></i><i></i></div>
+            <div class="preview-toolbar">
+              <span class="legend">Vista previa</span>
+              <div role="group" aria-label="Formato">
+                <button type="button" data-format="post" aria-pressed="true">Post</button
+                ><button type="button" data-format="story" aria-pressed="false">Story</button>
+              </div>
+            </div>
+            <div class="canvas-wrap" id="canvas-wrap">
+              <canvas id="badge" width="1080" height="1080" role="img" aria-label="Vista previa de tu badge"></canvas>
+            </div>
+            <div class="stage-foot">
+              <p class="export-meta" id="dimensions">1080 × 1080 px</p>
+              <button class="button download" id="download" type="button">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M12 4v11.5M7.5 11 12 15.5 16.5 11M4 19.5h16" /></svg
+                >Descargar PNG
+              </button>
+              <p id="message" role="status" aria-live="polite"></p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="join">
+        <svg class="join-orbits" viewBox="0 0 600 600" aria-hidden="true">
+          <circle cx="600" cy="300" r="120" />
+          <circle cx="600" cy="300" r="200" />
+          <circle cx="600" cy="300" r="290" />
+          <circle cx="600" cy="300" r="390" />
+        </svg>
+        <div class="join-copy" data-reveal>
+          <h2>¿Todavía no te inscribiste?</h2>
+          <p>
+            Entrá a
+            <a href="https://www.spaceappschallenge.org/2026/" target="_blank" rel="noopener noreferrer"
+              >spaceappschallenge.org</a
+            >
+            y elegí San Salvador como tu evento local.
+          </p>
+          <a
+            class="button dark"
+            href="https://www.spaceappschallenge.org/2026/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Inscribirme</a
+          >
+        </div>
+      </section>
+    </main>
+    <footer>
+      <img src="assets/brand/space-apps-logo-white.svg" alt="NASA Space Apps Challenge" width="160" height="63" />
+      <p>
+        Sitio de la comunidad local de San Salvador, no es un sitio oficial de NASA.<br />Crear un badge no te inscribe
+        al evento.
+      </p>
+    </footer>
+  </body>
+</html>
