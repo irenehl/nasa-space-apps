@@ -1,12 +1,16 @@
 {
-  "name": "spaceapps-social",
+  "name": "nasa-space-apps",
   "version": "1.0.0",
   "private": true,
-  "description": "Generador de badges de la comunidad Space Apps",
+  "description": "Badge generator and event site for NASA Space Apps San Salvador",
+  "type": "module",
   "scripts": {
-    "dev": "node scripts/serve.mjs",
+    "dev": "node scripts/dev-server.mjs",
     "build": "node scripts/build.mjs",
-    "check": "node --check app.js && node --check config.js"
+    "check": "node --check src/js/event-config.js && node --check src/js/space-scene.js && node --check src/js/page-motion.js && node --check src/js/badge-generator.js",
+    "format": "npx --yes prettier@3.6.2 --write ."
   },
-  "engines": { "node": ">=20" }
+  "engines": {
+    "node": ">=20"
+  }
 }

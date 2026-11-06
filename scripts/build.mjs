@@ -1,7 +1,11 @@
-import { mkdir, cp, rm } from 'node:fs/promises';
-await rm('dist', { recursive: true, force: true });
-await mkdir('dist', { recursive: true });
-for (const file of ['index.html', 'styles.css', 'app.js', 'config.js', 'assets']) {
-  await cp(file, `dist/${file}`, { recursive: true });
+import { cp, mkdir, rm } from 'node:fs/promises';
+
+const OUTPUT_DIR = 'dist';
+const ENTRIES = ['index.html', 'src', 'assets'];
+
+await rm(OUTPUT_DIR, { recursive: true, force: true });
+await mkdir(OUTPUT_DIR, { recursive: true });
+for (const entry of ENTRIES) {
+  await cp(entry, `${OUTPUT_DIR}/${entry}`, { recursive: true });
 }
-console.log('Sitio estático generado en dist/');
+console.log(`Static site generated in ${OUTPUT_DIR}/`);
